@@ -1,5 +1,3 @@
-
-'''
 import streamlit as st
 import math
 import pandas as pd
@@ -19,9 +17,6 @@ import statsmodels.api as sm
 from statsmodels.tsa.api import SimpleExpSmoothing
 from statsmodels.tsa.arima_model import ARIMA
 from statsmodels.tsa.stattools import adfuller
-'''
-
-pip install -r requirements.txt
 
 st.title('A Timeseries Analysis of Opioid deaths in the U.S.')
 df = pd.read_csv("opioid.csv")
