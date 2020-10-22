@@ -30,6 +30,7 @@ st.title('An Analysis of Opioid deaths in the U.S.')
 df = pd.read_csv("Wide_Master.csv")
 if st.checkbox('Display Opioid Data'):
     st.write(df.head(10))
+    
 '''
 df = pd.read_csv("opioid.csv")
 alt.data_transformers.enable('json')
