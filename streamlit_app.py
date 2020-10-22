@@ -63,6 +63,7 @@ if (choose_model == "Show Forecasting Results"):
     if st.checkbox('Review the Data, then check the box if you would like to start your own forecast. Put in the amount of years you would like to forecast into the future'):
         users_input = st.text_input('Enter a number between 2 and 200: ')
         try: 
+            st.markdown("### Please enter a number between 2 and 200")
             #newplot = results.plot_predict(1, int(users_input))
             #plt.xlabel('Year')
             #plt.ylabel('Total Opioid Deaths')
