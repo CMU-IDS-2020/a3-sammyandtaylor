@@ -5,7 +5,7 @@ import numpy as np
 from numpy import cov
 #import os
 import vega
-from vega_datasets import data
+#from vega_datasets import data
 import altair as alt
 import altair_viewer
 import seaborn as sns
