@@ -23,16 +23,12 @@ from statsmodels.tsa.api import SimpleExpSmoothing
 from statsmodels.tsa.arima_model import ARIMA
 from statsmodels.tsa.stattools import adfuller
 
-
-
-
 st.title('An Analysis of Opioid deaths in the U.S.')
 df = pd.read_csv("Wide_Master.csv")
 if st.checkbox('Display Opioid Data'):
     st.write(df.head(10))
-    
-'''
-df = pd.read_csv("opioid.csv")
+
+df = pd.read_csv("opioid2.csv")
 alt.data_transformers.enable('json')
 
 if df is not None:
@@ -51,7 +47,7 @@ if df is not None:
     resultplot = results.plot_predict(1,50)
     plt.xlabel('Year')
     plt.ylabel('Total Opioid Deaths')
-'''
+
 choose_model = st.sidebar.selectbox("Choose Machine Learning Model or EDA", 
 ['Show Exploratory Data Analysis', 'Show Forecasting Results', 'Show Regression Analysis'])
 
@@ -59,17 +55,16 @@ if (choose_model == "Show Forecasting Results"):
     st.markdown("## **Forecasting Opioid Deaths through 2050**")
     st.markdown("### Predicted total deaths from Methadone, Heroine, and Opioids")
     if not st.checkbox('Hide Graph', False, key=1):
-        #st.write(resultplot)
-        if st.checkbox('Review the Data, then check the box if you would like to start your own forecast. Put in the amount of years you would like to forecast into the future'):
-            users_input = st.text_input('Enter a number between 2 and 200: ')
-            try: 
-                st.markdown("### Please enter a number between 2 and 200")
-                #newplot = results.plot_predict(1, int(users_input))
-                #plt.xlabel('Year')
-                #plt.ylabel('Total Opioid Deaths')
-                #st.write(newplot)
-            except: 
-                st.markdown("### Please enter a number between 2 and 200")
+        st.write(resultplot)
+    if st.checkbox('Review the Data, then check the box if you would like to start your own forecast. Put in the amount of years you would like to forecast into the future'):
+        users_input = st.text_input('Enter a number between 2 and 200: ')
+        try: 
+            newplot = results.plot_predict(1, int(users_input))
+            plt.xlabel('Year')
+            plt.ylabel('Total Opioid Deaths')
+            st.write(newplot)
+        except: 
+            st.markdown("### Please enter a number between 2 and 200")
 
 
 df = pd.read_csv("Wide_Master.csv")
