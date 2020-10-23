@@ -70,7 +70,7 @@ if (choose_model == "Show Forecasting Results"):
 df = pd.read_csv("Wide_Master.csv")
 
 if (choose_model == "Show Regression Analysis"):
-    st.markdown("## *Regression Analysis of Predictor Variables vs. Target*")
+    st.markdown("## Regression Analysis of Predictor Variables vs. Target")
     st.markdown("### Predictor Variables in this case are: Income, Bachelor_Degree, Grad_Degree, HS_Grad, Less_Than_HS, Associates_Degree")
     options = st.selectbox('What chart would you like to see?', ('Total', 'Heroin', 'Methadone', 'Other Opioids'))
     keepvar = ['Income', 'Unemployment', 'Non_US_Born', 'Bachelor_Degree', 'Grad_Degree', 'HS_Grad', 'Less_Than_HS', 'Associates_Degree', 'Heroin', 'Other', 'Methadone', 'Total']
