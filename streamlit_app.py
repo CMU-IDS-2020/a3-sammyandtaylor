@@ -53,8 +53,7 @@ choose_model = st.sidebar.selectbox("Choose Machine Learning Model or EDA",
 
 if (choose_model == "Show Forecasting Results"):
     st.markdown("## **Forecasting Opioid Deaths through 2050**")
-    st.markdown("### Predicted total deaths from Methadone, Heroine, and Opioids")
-    st.write('### This plots a prediction of total opioid deaths by year with a confidence interval for the predictions')
+    st.markdown('### This plots a prediction of total opioid deaths by year from Methadone, Heroine, and Opioidswith a confidence interval for the predictions')
     if not st.checkbox('Hide Graph', False, key=1):
         st.write(resultplot)
     if st.checkbox('Review the Data, then check the box if you would like to start your own forecast. Put in the amount of years you would like to forecast into the future'):
