@@ -38,7 +38,7 @@ For this reason, we determined that the best way to represent our findings was t
 
 For the time series analysis portion, we divided the training dataset and testing dataset with a cut off of 2014. This was the mid-point in the data, as it runs from 2011 to 2017. We then trained the time series with Auto Regressive Moving Average. This gave much better results than a simple moving average, or exponential smoothing time series model, and was thus selected above the other model choices. 
 
-Once this was plotted, we used the predict feature to predict 10 years into the future. We then determined that the best way to offer interactivity to the user, was to allow the user to create their own forecast. We decided this was the method because simply zooming into a line chart or selecting points on the line chart didn’t add enough interest to the visualization, whereas this option allows the user to explore the data in an exciting and user-driven way. 
+Once this was plotted, we used the predict feature to predict 50 years into the future. We then determined that the best way to offer interactivity to the user, was to allow the user to create their own forecast. We decided this was the method because simply zooming into a line chart or selecting points on the line chart didn’t add enough interest to the visualization, whereas this option allows the user to explore the data in an exciting and user-driven way. 
 
 ## Conclusion
 
