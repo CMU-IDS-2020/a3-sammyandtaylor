@@ -44,7 +44,7 @@ if df is not None:
     test = test.resample('Y').count()
     model = ARIMA(training, order = (0,1,1))
     results = model.fit()
-    resultplot = results.plot_predict(1,25)
+    resultplot = results.plot_predict(1,50)
     plt.xlabel('Year')
     plt.ylabel('Total Opioid Deaths')
 
