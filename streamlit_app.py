@@ -23,7 +23,7 @@ from statsmodels.tsa.api import SimpleExpSmoothing
 from statsmodels.tsa.arima_model import ARIMA
 from statsmodels.tsa.stattools import adfuller
 
-st.title('An Analysis of Opioid deaths in the U.S.')
+st.title('An Analysis of Opioid Deaths in the U.S.')
 df = pd.read_csv("Wide_Master.csv")
 if st.checkbox('Display Opioid Data'):
     st.write(df.head(10))
@@ -44,7 +44,7 @@ if df is not None:
     test = test.resample('Y').count()
     model = ARIMA(training, order = (0,1,1))
     results = model.fit()
-    resultplot = results.plot_predict(1,50)
+    resultplot = results.plot_predict(1,10)
     plt.xlabel('Year')
     plt.ylabel('Total Opioid Deaths')
 
@@ -54,6 +54,7 @@ choose_model = st.sidebar.selectbox("Choose Machine Learning Model or EDA",
 if (choose_model == "Show Forecasting Results"):
     st.markdown("## **Forecasting Opioid Deaths through 2050**")
     st.markdown("### Predicted total deaths from Methadone, Heroine, and Opioids")
+    st.write('### This plots a prediction of total opioid deaths by year with a confidence interval for the predictions')
     if not st.checkbox('Hide Graph', False, key=1):
         st.write(resultplot)
     if st.checkbox('Review the Data, then check the box if you would like to start your own forecast. Put in the amount of years you would like to forecast into the future'):
