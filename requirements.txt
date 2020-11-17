@@ -8,3 +8,4 @@ scipy
 statsmodels
 altair
 altair_viewer
+vega
